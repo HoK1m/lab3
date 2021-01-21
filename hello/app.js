@@ -25,18 +25,18 @@ app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', handlebars());
 app.set('view engine', 'handlebars');
 // app.use(favicon());
-// app.use(logger('dev'));
-// app.use(express.json());
-// app.use(express.urlencoded());
-// app.use(methodOverride());
-// app.use(cookieParser('Intro HCI secret key'));
-// app.use(session());
-// app.use(router);
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(methodOverride());
+app.use(cookieParser('Intro HCI secret key'));
+app.use(session());
+app.use(router);
 app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
 if ('development' == app.get('env')) {
-  // app.use(errorHandler());
+  app.use(errorHandler());
 }
 
 // Add routes here
